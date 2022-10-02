@@ -28,9 +28,29 @@
 
         //Array
         $mangaList = array("RE:Zero", 2015, 75.304);
+        $newList = ["RE:Zero", 2015, 75.304];
+        print_r($newList);  // shows index & value
+
+            //isset() <-- checks if the value exists or not
+
+        if(isset($newList[3])) {
+            echo '<br>' . 'Found';
+        } else {
+            echo '<br>' . 'Not found';
+        }
+
+
+        //Associative array
+        $mangaList2 = [
+            'Tenshura' => '4/5',
+            'Danmachi' => '4/5',
+            'Berserk' => '5/5'
+        ];
+
+        echo '<br>' . $mangaList2['Danmachi'];
 
         //var_dump(variable)
-        //deletes a value
+        //deletes a variable
 
     ?>
 </body>
