@@ -2,6 +2,10 @@
     include('OOP_php/inc/header.php');
     $title = 'PHP_Basics';
 
+    //GET REQUESTS
+    //the $_GET is a superglobal array
+    $getter = $_GET['anything'];
+
     $favManga = [
         'Tenshura',
         'Danmachi',

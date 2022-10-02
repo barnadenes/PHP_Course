@@ -1,15 +1,16 @@
 <?php
     include('OOP_php/inc/header.php');
-    require('OOP_php/inc/functions.php');
+    require_once('OOP_php/inc/functions.php');
     $title = 'PHP_Basics';
 
-    $mangaInfo = [
-        ['name' => 'One Piece', 'Writer' => 'Eiichiro Oda'],
-        ['name' => 'Re:Zero', 'Writer' => 'Nagatsuki Teppei'],
-        ['name' => 'Berserk', 'Writer' => 'Miura Kentaro']
-    ];
-
-    $mangaPluck = pluck($mangaInfo, 'name');
+    //Validation filter_input()
+    $category = filter_input(INPUT_GET, 'category', FILTER_VALIDATE_INT);
+    $limit = filter_input(INPUT_GET, 'limit', FILTER_VALIDATE_INT);
+    
+    if($category == false || $limit == false) {
+        //if the input is not an integer then it stops
+        die();
+    }
 ?>
 
 <html lang="en">
@@ -24,12 +25,12 @@
     <div class="container">   
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1 class="mt-5">Manga I've read</h1>
+                <h1 class="mt-5">Get Input</h1>
             </div>    
         </div>
-    </div>
-    <div>
-        <?= output($mangaPluck); ?>
+        <div class="row">
+            Categories: <?= $category; ?> Limit: <?= $limit; ?>
+        </div>
     </div>
 <?php 
 
