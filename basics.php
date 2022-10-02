@@ -1,4 +1,5 @@
 <?php
+    include('OOP_php/inc/header.php');
     $title = 'PHP_Basics';
 
     $favManga = [
@@ -148,5 +149,7 @@ echo '<br>' . $mangaList2['Danmachi'];
     <div>
         <?= output($mangaPluck); ?>
     </div>
-</body>
-</html>
+<?php 
+
+    include('OOP_php/inc/footer.php');
+?>
