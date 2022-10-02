@@ -1,5 +1,5 @@
 <?php
-    $title = 'foreach loop';
+    $title = 'PHP_Basics';
 
     $favManga = [
         'Tenshura',
@@ -12,6 +12,13 @@
         'Danmachi' => '4/5',
         'Berserk' => '5/5'    
     ];
+
+    //Function (called in the HTML down below)
+    function sum($a, $b) {
+        return $a+$b;
+    }
+
+    $result = sum(1, 2);
 
 ?>
 
@@ -42,7 +49,8 @@
         // . (Concat)
         // New Line
         // with HTML <br>
-        echo "<br>Hello " . $name . " Thorn";
+
+        echo "<br>Hello " . $name . " Thorn<br>";
 
         //Array--------------------
         $mangaList = array("RE:Zero", 2015, 75.304);
@@ -78,6 +86,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1 class="mt-5">Manga I've read</h1>
+                <?= $result ?>
                 <table class="table table-striped">
                 <?php 
                 
