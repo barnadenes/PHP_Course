@@ -13,13 +13,94 @@
         'Berserk' => '5/5'    
     ];
 
+    //Global variable
+    $randValue = 'Character<br>';
+
     //Function (called in the HTML down below)
     function sum($a, $b) {
+        global $randValue; //Only works with the global keyword
+        echo $randValue;
         return $a+$b;
     }
 
     $result = sum(1, 2);
 
+?>
+<!-- ....................................................-->                   
+<?php
+
+// variables with echo vs print
+$name = "Damien";
+
+//Echo--------------------
+//Single quotes: echo 'Hy $name' = Hy $name
+//Double qoutes: echo "Hy $name" = Hy Damien
+//Doesn't have a return value
+
+echo "Hello {$name}";
+
+//Print--------------------
+//Has a return value of 1, can used as an expression
+
+// . (Concat)
+// New Line
+// with HTML <br>
+
+echo "<br>Hello " . $name . " Thorn<br>";
+
+//Array--------------------
+$mangaList = array("RE:Zero", 2015, 75.304);
+$newList = ["RE:Zero", 2015, 75.304];
+print_r($newList);  // shows index & value
+
+    //isset() <-- checks if the value exists or not
+
+if(isset($newList[3])) {
+    echo '<br>' . 'Found';
+} else {
+    echo '<br>' . 'Not found';
+}
+
+
+//Associative array--------------------
+$mangaList2 = [
+    'Tenshura' => '4/5',
+    'Danmachi' => '4/5',
+    'Berserk' => '5/5'
+];
+
+echo '<br>' . $mangaList2['Danmachi'];
+
+//var_dump(variable)
+//deletes a variable
+
+?>
+<!-- ....................................................--> 
+<?php
+
+    $mangaInfo = [
+        ['name' => 'One Piece', 'Writer' => 'Eiichiro Oda'],
+        ['name' => 'Re:Zero', 'Writer' => 'Nagatsuki Teppei'],
+        ['name' => 'Berserk', 'Writer' => 'Miura Kentaro']
+    ];
+
+    function output($value) {
+        echo '<pre>';
+        print_r($value);
+        echo '</pre>';
+    };
+
+    // use function is needed, because the key var is not- 
+    // global otherwise
+    function pluck($arr, $key) {
+       $results = array_map(function($item) use($key) {
+            return $item[$key];
+       }, $arr);
+       
+       return $results;
+    }
+
+    $mangaPluck = pluck($mangaInfo, 'name');
 ?>
 
 <html lang="en">
@@ -31,56 +112,6 @@
     <title>PHP_Basics: <?= $title; ?></title>
 </head>
 <body>
-    <?php
-
-        // variables with echo vs print
-        $name = "Damien";
-
-        //Echo--------------------
-        //Single quotes: echo 'Hy $name' = Hy $name
-        //Double qoutes: echo "Hy $name" = Hy Damien
-        //Doesn't have a return value
-
-        echo "Hello {$name}";
-
-        //Print--------------------
-        //Has a return value of 1, can used as an expression
-
-        // . (Concat)
-        // New Line
-        // with HTML <br>
-
-        echo "<br>Hello " . $name . " Thorn<br>";
-
-        //Array--------------------
-        $mangaList = array("RE:Zero", 2015, 75.304);
-        $newList = ["RE:Zero", 2015, 75.304];
-        print_r($newList);  // shows index & value
-
-            //isset() <-- checks if the value exists or not
-
-        if(isset($newList[3])) {
-            echo '<br>' . 'Found';
-        } else {
-            echo '<br>' . 'Not found';
-        }
-
-
-        //Associative array--------------------
-        $mangaList2 = [
-            'Tenshura' => '4/5',
-            'Danmachi' => '4/5',
-            'Berserk' => '5/5'
-        ];
-
-        echo '<br>' . $mangaList2['Danmachi'];
-
-        //var_dump(variable)
-        //deletes a variable
-
-    ?>
-
-
     <!-- Loops -->
     <div class="container">   
         <div class="row">
@@ -113,6 +144,9 @@
                 </table>
             </div>    
         </div>
+    </div>
+    <div>
+        <?= output($mangaPluck); ?>
     </div>
 </body>
 </html>
