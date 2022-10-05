@@ -1,0 +1,14 @@
+[
+    {
+        "term": "css",
+        "definition":"cascading sheet style"
+    },
+    {
+        "term": "js",
+        "definition":"javascript"
+    },
+    {
+        "term": "php",
+        "definition":"hypertext preprocessor"
+    }
+]
