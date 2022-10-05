@@ -3,8 +3,8 @@
 
     $title = 'POST Input';
 
-    require_once('OOP_php/inc/functions.php');
-    require_once('OOP_php/inc/config.php');
+    require_once('OOP_php/proj_1/inc/functions.php');
+    require_once('OOP_php/proj_1/inc/config.php');
 
     if(is_user_authenticated()) {
         redirect('admin.php');
@@ -35,7 +35,7 @@
         }
     }
 
-    include('OOP_php/inc/header.php');
+    //include('OOP_php/inc/header.php');
 
 ?>
 
@@ -69,4 +69,4 @@
         </div>
     </div>
 
-<?php include('OOP_php/inc/footer.php'); ?>
+<?php //include('OOP_php/inc/footer.php'); ?>

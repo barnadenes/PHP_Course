@@ -1,6 +1,6 @@
 <?php
-    include('OOP_php/inc/header.php');
-    require_once('OOP_php/inc/functions.php');
+    //include('OOP_php/inc/header.php');
+    require_once('OOP_php/proj_1/inc/functions.php');
     $title = 'PHP_Basics';
 
     //Validation filter_input()
@@ -34,5 +34,5 @@
     </div>
 <?php 
 
-    include('OOP_php/inc/footer.php');
+    //include('OOP_php/inc/footer.php');
 ?>

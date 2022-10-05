@@ -1,5 +1,5 @@
 <?php
-    include('OOP_php/inc/header.php');
+    //include('OOP_php/inc/header.php');
     $title = 'PHP_Basics';
 
     //GET REQUESTS
@@ -155,5 +155,5 @@ echo '<br>' . $mangaList2['Danmachi'];
     </div>
 <?php 
 
-    include('OOP_php/inc/footer.php');
+    //include('OOP_php/inc/footer.php');
 ?>

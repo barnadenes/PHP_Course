@@ -1,6 +1,6 @@
 <?php
 
-require('OOP_php/inc/functions.php');
+require('OOP_php/proj_1/inc/functions.php');
 
 $title = "Hello dude";
 
