@@ -2,12 +2,10 @@
 
 require('app/app.php');
 
-$json = get_data();
+$view_bag = [
+    'title' => 'Glossary List'
+];
 
-$terms = json_decode($json);
+view('index', get_terms());
 
-//$view_bag = [];
-
-//$view_bag['title'] = 'This is the new title';
-
-view('index', $terms);
+?> 

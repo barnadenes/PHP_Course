@@ -6,21 +6,21 @@
     </div>
     <div class="row">
         <table class="table table-striped">
-        <?php 
         
-            foreach($model as $item) : ? {
-                $term = $item -> term;
-                $definition = $item -> definition;
-                echo "<tr><td>$term</td><td>$definition</td></tr>";
-            }  
+        
+        <?php foreach($model as $item) : ?> 
+            <tr>
+                <td><?= $item->term; ?></td>
+                <td><?= $item->definition; ?></td>
+            </tr>
+        <?php endforeach; ?>
 
-
+        <?php    
             foreach($model as $item) {
                 $term = $item -> term;
                 $definition = $item -> definition;
                 echo "<tr><td>$term</td><td>$definition</td></tr>";
             }        
-
         ?>
         </table>
     </div>
